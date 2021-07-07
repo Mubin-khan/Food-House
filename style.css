@@ -1,6 +1,55 @@
 body{
+    --nav-load-time : 300ms;
+    --nav-link-load-time : 500ms;
     margin: 0;
     font-family: font-family: "Poppins", sans-serif;
+}
+#logo{
+    width: 150px;
+}
+nav{
+    margin-bottom: 100px;
+    width: 100%;
+    height: 60px;
+    background-image: linear-gradient(rgb(24, 20, 20),rgb(54, 38, 38));
+    color: white;
+    position: fixed;
+    animation: nav-load var(--nav-load-time) ease-in forwards;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+nav ul li{
+    padding: 10px 15px;
+    background-color: orangered;
+    border-radius: 5%;
+    margin-top: 10px;
+    list-style: none;
+    margin-left: 780px;
+    animation-name: nav-link-load;
+    animation-duration: var(--nav-link-load-time);
+    animation-delay: var(--nav-load-time); 
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    transform: scale(0);
+}
+nav ul li:first-child{
+    animation-name: nav-first-link-load;
+}
+nav ul li:nth-child(2){
+    margin-left: 70px;
+}
+nav ul li:nth-child(3){
+    animation-name: nav-last-link-load;
+    margin-left: 70px;
+}
+
+
+li a{
+    text-decoration: none;
+    color: whitesmoke;
 }
 h1{
     font-size: 50px;
@@ -95,4 +144,47 @@ h3{
 }
 .foot{
     padding-top: 20px;
+}
+
+@keyframes nav-load{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes nav-link-load{
+    0%{
+        transform: scale(0);
+    }
+    90%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes nav-first-link-load{
+    0%{
+        transform: translateX(-1000%);
+    }
+    90%{
+        transform: translateX(50%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes nav-last-link-load{
+    0%{
+        transform: translateX(1000%);
+    }
+    90%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(0);
+    }
 }
