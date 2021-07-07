@@ -8,9 +8,9 @@ body{
     width: 150px;
 }
 nav{
-    margin-bottom: 100px;
+    display: flex;
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-image: linear-gradient(rgb(24, 20, 20),rgb(54, 38, 38));
     color: white;
     position: fixed;
@@ -25,9 +25,10 @@ nav ul li{
     padding: 10px 15px;
     background-color: orangered;
     border-radius: 5%;
-    margin-top: 10px;
+    margin-bottom: 1%;
+    margin-top: 1.4%;
     list-style: none;
-    margin-left: 780px;
+    margin-left: 700px;
     animation-name: nav-link-load;
     animation-duration: var(--nav-link-load-time);
     animation-delay: var(--nav-load-time); 
@@ -57,6 +58,7 @@ h1{
 .text-color{
     color: orange;
 }
+
 #order-food{
     width: 100%;
     display: flex;
